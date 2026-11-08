@@ -105,7 +105,7 @@ ip dhcp Excluded-add 10.82.100.1 10.82.100.100
 ip dhcp pool MGMTDATA
    network 10.82.1.0 255.255.255.0
    default-router 10.82.1.4
-   domain-name MGMTDATA.COM
+   domain-name DATA.ADI
    dns-server 10.82.1.10
 ip dhcp pool WIFIDATA
    network 10.82.10.0 255.255.255.0
@@ -123,7 +123,7 @@ ip dhcp pool VOICEVLAN
    domain-name VOICEVLAN.COM
    dns-server 10.82.1.10
    option 150 ip 10.82.100.8   
-   END
+end
 
 !!CREATING AND PLACING PORTS INSIDEAVLAN:
 ( LINE 103 to 141 PASTE TO COREBABA SWITCH )
@@ -133,9 +133,9 @@ vlan 10
 vlan 50
    name IPCameraVLAN
 vlan 69
-   name vlanNIrobert
+   name siraHAHA
 vlan 70
-    name EXTRAVLAN
+    name vivamax
 vlan 71
     name HRD-POLICY
 vlan 100
@@ -172,10 +172,10 @@ config t
 ip routing
 ip dhcp pool CAMERA6
 host 10.82.50.6 255.255.255.0
-client-identifier 001a.xxxx.yyyy
+client-identifier 001a.0709.bce9
 ip dhcp pool CAMERA8
 host 10.82.50.8 255.255.255.0
-client-identifier 001a.xxxx.yyyy 
+client-identifier 001a.0709.c633 
 end
 show ip dhcp binding
 
@@ -246,18 +246,18 @@ ephone-dn 7
 ephone-dn 8
   number 8288
  ephone-dn 9
-   number 8299
+  number 8267
 ephone-dn 10
- number 8298
+  number 8264
 Ephone 1
-  Mac-address cafe.face.baba
+  Mac-address 6cfa.8972.f0a9
   type 8945
-  button 1:8 2:7 3:6 4:5
+  button 1:1 2:7 3:6 4:9
   restart
 Ephone 2
-  Mac-address fafa.caca.baba
+  Mac-address 8478.aced.5bb7
   type 8945
-  button 1:4 2:3 3:2 4:1
+  button 1:4 2:3 3:2 4:10
   restart  
 end
 
@@ -288,10 +288,10 @@ configure terminal
  destination-pattern 11..
  session target ipv4:10.11.100.8
  codec g711ULAW
-  !dial-peer voice 12 Voip
-  !destination-pattern 12..
-  !session target ipv4:10.12.100.8
-  !codec g711ULAW
+  dial-peer voice 12 Voip
+  destination-pattern 12..
+  session target ipv4:10.12.100.8
+  codec g711ULAW
 dial-peer voice 21 Voip
  destination-pattern 21..
  session target ipv4:10.21.100.8
@@ -344,10 +344,10 @@ dial-peer voice 81 Voip
  destination-pattern 81..
  session target ipv4:10.81.100.8
  codec g711ULAW
-dial-peer voice 82 Voip
- destination-pattern 82..
- session target ipv4:10.82.100.8
- codec g711ULAW
+!dial-peer voice 82 Voip
+!destination-pattern 82..
+!session target ipv4:10.82.100.8
+!codec g711ULAW
 dial-peer voice 91 Voip
  destination-pattern 91..
  session target ipv4:10.91.100.8
@@ -400,7 +400,7 @@ network 200.0.0.0  0.0.0.255 area 0
 network 10.82.82.0  0.0.0.255 area 0
 network 82.0.0.1  0.0.0.0 area 0
 Interface gi 0/0/0
- ip ospf network point-to-point
+ip ospf network point-to-point
 end
 
 @CoreBABA:
