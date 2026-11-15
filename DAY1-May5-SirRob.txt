@@ -1,36 +1,36 @@
 TASK1: COLLAPSED BACKBONE: BASIC LAYER3 CONFIGURATION.
 !@@@CORE SWITCH SA TAAS
-config t
-   hostname COREtaas-82
-   enable secret pass
-   service password-encryption
-   no logging console
-   no ip domain-lookup
-   line console 0
-     password pass
-     login
-     exec-timeout 0 0
-    line vty 0 14
-      password pass
-      login
-      exec-timeout 0 0
-   Int Vlan 1
-     no shutdown
-	 ip add 10.82.1.2 255.255.255.0
-	 description MGMTDATA
-   Int Vlan 10
-     no shutdown
-	 ip add 10.82.10.2 255.255.255.0
-	 description WIRELESS
-   Int Vlan 50
-     no shutdown
-	 ip add 10.82.50.2 255.255.255.0
-	 description IPCCTV
-   Int Vlan 100
-     no shutdown
-	 ip add 10.82.100.2 255.255.255.0
-	 description VOICEVLAN
-end
+	config t
+	   hostname COREtaas-82
+	   enable secret pass
+	   service password-encryption
+	   no logging console
+	   no ip domain-lookup
+	   line console 0
+	     password pass
+	     login
+	     exec-timeout 0 0
+	    line vty 0 14
+	      password pass
+	      login
+	      exec-timeout 0 0
+	   Int Vlan 1
+	     no shutdown
+		 ip add 10.82.1.2 255.255.255.0
+		 description MGMTDATA
+	   Int Vlan 10
+	     no shutdown
+		 ip add 10.82.10.2 255.255.255.0
+		 description WIRELESS
+	   Int Vlan 50
+	     no shutdown
+		 ip add 10.82.50.2 255.255.255.0
+		 description IPCCTV
+	   Int Vlan 100
+	     no shutdown
+		 ip add 10.82.100.2 255.255.255.0
+		 description VOICEVLAN
+	end
 
 !!!DAPAT 7 UNDER82SCORE ANG NA EDIT MO  ( LINE 34 to 68 PASTE TO COREBABA SWITCH )
 !@@@LeafSwitchONLY
